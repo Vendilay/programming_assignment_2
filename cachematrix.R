@@ -8,65 +8,41 @@
 # getinverse, gets the inverse matrix value
 
 makeCacheMatrix <- function(x = matrix())
-  
-  {i <- NULL
-  
+  {
+  i <- NULL
   set <- function(y)
-    
     {
-    
-    x <<- y
-    
-    i <<- NULL
-    
-    }
-  
+    x <<- y 
+    i <<- NULL  
+    }  
   get <- function() x
-  
   setinverse <- function(inverse) i <<- inverse
-  
-  getinverse <- function() i
-  
+  getinverse <- function() i  
   list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
-  
   }
 
 
 # The following function returns the inverse of matrix.
 
 cacheSolve <- function(x, ...)
-  
   {
-  
   i <- x$getinverse()
-  
-  if (!is.null(i))
-    
-    {
-    
-    message("Getting Cached Data")
-    
-    return(i)
-    
+  if (!is.null(i))  
+    {  
+    message("Getting Cached Data") 
+    return(i) 
     }
-  
   data <- x$get()
-  
   i <- solve(data, ...)
-  
   x$setinverse(i)
-  
-  i
-  
+  i 
   }
 
 # Example
 # The first expression creates a randomized 2x2 matrix.
 
 x <- matrix(rexp(4, rate=.1), ncol=2)
-
 y <- makeCacheMatrix(x)
-
 z <- cacheSolve(y)
 
 # An example for a random matrix;
