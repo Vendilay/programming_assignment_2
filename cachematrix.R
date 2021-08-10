@@ -1,7 +1,11 @@
 # Following two functions, makeCacheMatrix and cacheSolve, are to be used to
 # cache the inverse of a matrix.
 
-# 
+# In the following function the arguments of the list does;
+# set, sets the matrix value
+# get, gets the matrix value
+# setinverse, sets the inverse matrix value
+# getinverse, gets the inverse matrix value
 
 makeCacheMatrix <- function(x = matrix())
   
@@ -28,7 +32,7 @@ makeCacheMatrix <- function(x = matrix())
   }
 
 
-## Write a short comment describing this function
+# The following function returns the inverse of matrix.
 
 cacheSolve <- function(x, ...)
   
@@ -40,7 +44,7 @@ cacheSolve <- function(x, ...)
     
     {
     
-    message("getting cached data")
+    message("Getting Cached Data")
     
     return(i)
     
@@ -65,7 +69,7 @@ y <- makeCacheMatrix(x)
 
 z <- cacheSolve(y)
 
-# An example for a matrix;
+# An example for a random matrix;
 #           [,1]       [,2]
 # [1,]  3.329605  0.4603402
 # [2,] 22.225423 14.1100545
